@@ -9,16 +9,29 @@
             font-family: Arial, sans-serif;
             text-align: center;
             margin: 50px;
+            background-color: #fdf6e3;
+        }
+        h1 {
+            color: #d2691e;
         }
         #message {
             font-size: 24px;
             margin: 20px;
             min-height: 50px;
+            transition: opacity 0.5s ease-in-out;
         }
         button {
             font-size: 18px;
-            padding: 10px 20px;
+            padding: 15px 25px;
+            background-color: #ff9800;
+            color: white;
+            border: none;
+            border-radius: 8px;
             cursor: pointer;
+            transition: background 0.3s;
+        }
+        button:hover {
+            background-color: #e68900;
         }
     </style>
 </head>
@@ -37,10 +50,15 @@
             "You’re the heart of our family.",
             // Add all 50 messages here
         ];
-
         function showRandomMessage() {
-            const randomIndex = Math.floor(Math.random() * messages.length);
-            document.getElementById("message").textContent = messages[randomIndex];
+            const messageElement = document.getElementById("message");
+            messageElement.style.opacity = "0";  // Start fade-out effect
+
+            setTimeout(() => {
+                const randomIndex = Math.floor(Math.random() * messages.length);
+                messageElement.textContent = messages[randomIndex];
+                messageElement.style.opacity = "1";  // Fade-in effect
+            }, 300);
         }
     </script>
 
