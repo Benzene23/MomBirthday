@@ -33,6 +33,12 @@
         button:hover {
             background-color: #e68900;
         }
+        #message-list {
+            max-width: 600px;
+            margin: 20px auto;
+            text-align: left;
+            font-size: 18px;
+        }
     </style>
 </head>
 <body>
@@ -42,23 +48,81 @@
     <button onclick="showRandomMessage()">Show Message</button>
 
     <script>
-        const messages = [
+         const messages = [
             "You always know how to make us smile.",
             "Your kindness is endless.",
             "You make every moment special.",
             "Your laugh is contagious.",
             "You’re the heart of our family.",
-            // Add all 50 messages here
+            "You inspire us every day.",
+            "Your hugs are the best.",
+            "You have a heart of gold.",
+            "Your cooking is amazing.",
+            "You always put others first.",
+            "Your advice is priceless.",
+            "You make holidays extra special.",
+            "You always find the positive in everything.",
+            "You are incredibly strong.",
+            "Your creativity knows no bounds.",
+            "You are a great listener.",
+            "Your sense of humor brightens our days.",
+            "You are always there when we need you.",
+            "You teach us the importance of family.",
+            "Your love is unconditional.",
+            "You have the best stories to tell.",
+            "You make us feel loved every day.",
+            "Your patience is admirable.",
+            "You are an amazing role model.",
+            "Your kindness spreads to everyone around you.",
+            "You are a great problem solver.",
+            "You have an incredible sense of style.",
+            "You are always up for an adventure.",
+            "You make every day brighter.",
+            "You have a beautiful soul.",
+            "You are the glue that holds us together.",
+            "Your support means everything to us.",
+            "You give the best life advice.",
+            "Your voice is comforting.",
+            "You never give up on us.",
+            "You have an amazing laugh.",
+            "You always know how to cheer us up.",
+            "You make every celebration more fun.",
+            "You believe in us even when we don’t.",
+            "You are incredibly thoughtful.",
+            "You are always learning and growing.",
+            "You give the best surprises.",
+            "Your generosity knows no limits.",
+            "You are the best storyteller.",
+            "You make ordinary days extraordinary.",
+            "You inspire us to be better.",
+            "Your positivity is contagious.",
+            "You are always full of wisdom.",
+            "You are simply the best!",
+            "We love you more than words can say!"
         ];
-        function showRandomMessage() {
-            const messageElement = document.getElementById("message");
-            messageElement.style.opacity = "0";  // Start fade-out effect
 
-            setTimeout(() => {
-                const randomIndex = Math.floor(Math.random() * messages.length);
-                messageElement.textContent = messages[randomIndex];
-                messageElement.style.opacity = "1";  // Fade-in effect
-            }, 300);
+        const shownMessages = new Set();
+
+        function showRandomMessage() {
+            if (shownMessages.size >= messages.length) {
+                document.getElementById("message").textContent = "All 50 messages have been revealed!";
+                return;
+            }
+
+            let randomIndex;
+            do {
+                randomIndex = Math.floor(Math.random() * messages.length);
+            } while (shownMessages.has(messages[randomIndex]));
+
+            const message = messages[randomIndex];
+            document.getElementById("message").textContent = message;
+            shownMessages.add(message);
+
+            // Add to list
+            const list = document.getElementById("message-list");
+            const listItem = document.createElement("li");
+            listItem.textContent = message;
+            list.appendChild(listItem);
         }
     </script>
 
