@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>50 Things We Love About You</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #message {
+            font-size: 24px;
+            margin: 20px;
+            min-height: 50px;
+        }
+        button {
+            font-size: 18px;
+            padding: 10px 20px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>50 Things We Love About You</h1>
+    <p id="message">Click the button to see something we love about you!</p>
+    <button onclick="showRandomMessage()">Show Message</button>
+
+    <script>
+        const messages = [
+            "You always know how to make us smile.",
+            "Your kindness is endless.",
+            "You make every moment special.",
+            "Your laugh is contagious.",
+            "You’re the heart of our family.",
+            // Add all 50 messages here
+        ];
+
+        function showRandomMessage() {
+            const randomIndex = Math.floor(Math.random() * messages.length);
+            document.getElementById("message").textContent = messages[randomIndex];
+        }
+    </script>
+
+</body>
+</html>
