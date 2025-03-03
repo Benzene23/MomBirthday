@@ -76,6 +76,7 @@
         function showRandomMessage() {
             if (shownMessages.size >= messages.length) {
                 document.getElementById("message").textContent = "All 50 messages have been revealed!";
+                document.getElementById("message-list").style.display = "block"; // Reveal list
                 celebrate();
                 return;
             }
@@ -89,10 +90,6 @@
             document.getElementById("message").textContent = message;
             shownMessages.add(message);
             
-            if (shownMessages.size === messages.length) {
-                document.getElementById("message-list").style.display = "block"; // Reveal list
-                celebrate();
-            }
 
             // Add to list
             const list = document.getElementById("message-list");
