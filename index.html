@@ -89,7 +89,13 @@
             const message = messages[randomIndex];
             document.getElementById("message").textContent = message;
             shownMessages.add(message);
-            
+
+            // Apply fade-out, change message, then fade-in
+            messageElement.style.opacity = "0"; // Start fade-out
+            setTimeout(() => {
+                messageElement.textContent = message;
+                messageElement.style.opacity = "1"; // Fade back in
+            }, 500); // Adjust timing as needed
 
             // Add to list
             const list = document.getElementById("message-list");
