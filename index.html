@@ -34,6 +34,7 @@
             background-color: #e68900;
         }
         #message-list {
+            display: none; /* Hidden by default */
             max-width: 600px;
             margin: 20px auto;
             text-align: left;
@@ -87,6 +88,10 @@
             const message = messages[randomIndex];
             document.getElementById("message").textContent = message;
             shownMessages.add(message);
+            
+            if (shownMessages.size === messages.length) {
+                document.getElementById("message-list").style.display = "block"; // Reveal list
+            }
 
             // Add to list
             const list = document.getElementById("message-list");
