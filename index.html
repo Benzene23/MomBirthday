@@ -63,7 +63,7 @@
 </script>
     <script>
          const messages = [
-            "Grandpa loves that you great at understanding him on the phone",
+            "Grandpa loves that you are great at understanding him on the phone",
             "We love how creative you are",
             "We love how organized you are, you make everything look so easy",
             "Grandpa loves how good you are at ordering stuff",
@@ -105,6 +105,8 @@
             shownMessages.clear();
             document.getElementById("message").textContent = "Click the button to see something we love about you!";
             document.getElementById("message-list").textContent = "";
+            const shownMessages = new Set();
+
         }
     </script>
 
