@@ -88,13 +88,13 @@
             "Jen, I love the great times we have when we are together. -Vanessa",
             "Jen, you’ve got some amazing driving skills. -Vanessa",
             "Jen, you are such a good listener and someone I can talk to , no matter the situation. -Vanessa",
-            "The way you remember the littlest details and go out of your way to make everyone you know feel special and loved.",
+            "The way you remember the littlest details and go out of your way to make everyone you know feel special and loved",
             "You are the best Mom I could ever ask for",
             "I can talk to you about anything and you always help me figure out whats best for me",
             "Being your mini me",
             "The essays sent of what we are doing on vacation exactly what times and everything we need to know 2 weeks before vacation",
-
-        ];
+            "How dedicated you are to your walks and peloton, you have Grandpa committed to do that everyday",
+        ];  
 
         const shownMessages = new Set();
 
@@ -125,6 +125,7 @@
             shownMessages.clear();
             document.getElementById("message").textContent = "Click the button to see something we love about you!";
             document.getElementById("message-list").textContent = "";
+            document.getElementById("message-list").style.display = "none"; // Hide the list again
         }
     </script>
 
