@@ -93,7 +93,7 @@
             "I can talk to you about anything and you always help me figure out whats best for me",
             "Being your mini me",
             "The essays sent of what we are doing on vacation exactly what times and everything we need to know 2 weeks before vacation",
-            "How dedicated you are to your walks and peloton, you have Grandpa committed to do that everyday",
+            "How dedicated you are to your walks and peloton, you have Grandpa committed to working out everyday",
             "Your love and protectiveness over the family",
             "You go out of your way to help others",
             "How you listen to the little things",
@@ -134,14 +134,15 @@
             "You buy Kitty ice cream",
             "You make Kitty beef even though you are vegan",
             "You are the best Mom Kitty could ever ask for",
-            "You take Kitty for pup cups"
+            "You take Kitty for pup cups",
+            "You still care about the Gophers even though they are your rivals",
         ];  
 
         const shownMessages = new Set();
 
         function showRandomMessage() {
             if (shownMessages.size >= messages.length) {
-                document.getElementById("message").textContent = "All 50 messages have been revealed! Happy Birthday!";
+                document.getElementById("message").textContent = "All messages have been revealed! Happy Birthday!";
                 document.getElementById("message-list").style.display = "block"; // Reveal list
                 celebrate();
                 return;
