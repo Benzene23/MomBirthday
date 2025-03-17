@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>50 Things We Love About You</title>
+    <title>50+ Things We Love About You</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,7 +43,6 @@
     </style>
 </head>
 <body>
-
     <h1>50+ Things We Love About You</h1>
     <p id="message">I got everyone in the family to compile 50 things (it ended up being a lot more than 50 things) that make us think of you, something that we love about you, or just a memory of you that we love. Happy Birthday, Love you -Ben</p>
     <button onclick="showRandomMessage()">Show Message</button>
@@ -149,7 +148,6 @@
                 celebrate();
                 return;
             }
-
             let randomIndex;
             do {
                 randomIndex = Math.floor(Math.random() * messages.length);
@@ -158,7 +156,6 @@
             const message = messages[randomIndex];
             document.getElementById("message").textContent = message;
             shownMessages.add(message);
-
             // Add to list
             const list = document.getElementById("message-list");
             const listItem = document.createElement("li");
